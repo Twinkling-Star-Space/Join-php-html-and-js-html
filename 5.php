@@ -1,56 +1,44 @@
 <?php
-
-if($_SERVER['REQUEST_METHOD'] == 'POST')
-{
-$x=$_POST["name"];
-$y=$_POST["address"];
-$z=$_POST["email"];
-$w=$_POST["gm"];
-
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $x = $_POST["name"];
+    $y = $_POST["address"];
+    $z = $_POST["email"];
+    $w = $_POST["gm"];
 }
 
-$servername ="localhost";
-$username="root";
-$password ="";
-$dbname ="DIPLAL-DB";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "DIPLAL";
 
-$conn = new mysqli($servername,$username,$password);
+$conn = new mysqli($servername, $username, $password);
 
-if($conn->connect_error)
-{
-    die ("connection failed " .$conn->error);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
-echo "connected to server successfully";
+echo "Connected to server successfully";
 
-
-$query1 = "CREATE DATABASE DIPLAL-DB";
-$conn->query($query1);  
-if(!$query1)
-{
-    echo " Database Not connected";
+$query1 = "CREATE DATABASE DIPLAL";
+$conn->query($query1);
+if (!$query1) {
+    echo "Database not connected"; 
 }
-echo " Databaseconnected successfully";
+echo "Database connected successfully";
 
-mysqli_select_db($conn, "DIPLAL-DB");
+mysqli_select_db($conn, "DIPLAL");
 
-$query2 = "create table form 
-(Name VARCHAR(255) NOT NULL,
- Email VARCHAR(255) NOT NULL,
- Address VARCHAR(255) NOT NULL,
- Gender VARCHAR(255) NOT NULL)";
+$query2 = "CREATE TABLE form1 (
+    Name VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    Address VARCHAR(255) NOT NULL,
+    Gender VARCHAR(255) NOT NULL
+)";
 
 $conn->query($query2);
-if(mysqli_query($conn, $query2))
-{
-    echo "table created successfully";
+if (mysqli_query($conn, $query2)) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . mysqli_error($conn);
 }
-else{
-    echo "Error creating table: ". mysqli_error($conn);
-}
-
-$query3 = "INSERT INTO form (Name, Email, Address, Gender)
- VALUES ('$x', '$z', '$y', '$w')";
-
 $conn->close();
-
 ?>
