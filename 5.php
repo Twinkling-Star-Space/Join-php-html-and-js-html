@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "DIPLAL";
+$dbname = "DIPLALphp";
 
 $conn = new mysqli($servername, $username, $password);
 
@@ -18,14 +18,14 @@ if ($conn->connect_error) {
 }
 echo "Connected to server successfully";
 
-$query1 = "CREATE DATABASE DIPLAL";
+$query1 = "CREATE DATABASE DIPLALphp";
 $conn->query($query1);
 if (!$query1) {
     echo "Database not connected"; 
 }
 echo "Database connected successfully";
 
-mysqli_select_db($conn, "DIPLAL");
+mysqli_select_db($conn, "DIPLALphp");
 
 $query2 = "CREATE TABLE form1 (
     Name VARCHAR(255) NOT NULL,
