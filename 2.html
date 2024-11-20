@@ -4,22 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORM_PAGE</title>
+    <style>
+        *{
+            margin:0px;
+        }
+        .head{
+            background-color: rgb(37, 192, 140);
+            color:white;
+            height:6pc;
+           padding-top:3pc;
+           
+
+        }
+        hr{
+            background-color:rgb(162, 240, 229);
+            height: 2px;
+        }
+        h1{
+            position:relative;
+            margin-left:45%;
+        }
+
+        .formdiv{
+            background-color: rgb(144, 240, 208);
+            height:100%;
+        }
+
+        .box{
+            
+            margin-top:2pc;
+            width:15pc;
+            height:2pc;
+            border-radius: 8px;
+            padding-left:1pc;
+
+        }
+        p{
+            display:inline-block;
+            margin-left:2pc;
+            font-size:18px;
+            font-weight: bold;
+        }
+
+        button
+        {
+            width:7pc;
+            height:2pc;
+            border-radius:0.8pc;
+            background-color: gold;
+            border-color:gold;
+            margin-left:20px;
+            margin-bottom:20px;
+            margin-top:5pc;
+
+        }
+    </style>
 </head>
 <body>
-    <div>
+    <div class="head">
         <h1>REGISTER YOUR FORM</h1>
     </div>
-    <div>
+    <hr>
+    <div class="formdiv">
        
         <form name="form1" method="post" action="insertdata.php">
-        Name: <input type="text" name="name" value="">
+           <p>ID:</p> <input type="number"placeholder="Enter your id " class="box" name="id">
+            <br><br><p>Name:</p>    <input  placeholder="Enter your name"  class="box" id="name" type="text" name="name" value="">
         <br><br>
-        Address: <input type="text "name="address" value="">
+        <p>Address: </p><input  class="box" id="add"placeholder="Enter your Address" type="text "name="address" value="">
         <br><br>
-        Email: <input type="email" name="email" value="">
+        <p>Email: </p><input  class="box" id="email" type="email" placeholder="Enter your email" name="email" value="">
         <br><br>
-        Gender: <input type="radio" name="gm" value="DONE">Male <input type="radio" name="gm">Female
-       <br><br> 
+
+        <button>VALIDATION</button>
+        <button>UPDATE</button>
+        <button>CREATE</button>
+        <button>EDIT</button>
+        <button>DELETE</button>
+
        <button onclick="validation()" >Submit</button>
     </form>
     </div>
