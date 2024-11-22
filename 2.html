@@ -68,12 +68,19 @@
     <div class="formdiv">
        
         <form name="form1" method="post" action="insertdata.php">
-           <p>ID:</p> <input type="number"placeholder="Enter your id " class="box" name="id">
-            <br><br><p>Name:</p>    <input  placeholder="Enter your name"  class="box" id="name" type="text" name="name" value="">
+           
+            <p>ID:</p> <input type="number"placeholder="Enter your id " class="box" name="id">
+            <br><br>
+            <p>Name:</p>    <input  placeholder="Enter your name"  class="box" id="name" type="text" name="name" value="">
         <br><br>
+
         <p>Address: </p><input  class="box" id="add"placeholder="Enter your Address" type="text "name="address" value="">
         <br><br>
+
         <p>Email: </p><input  class="box" id="email" type="email" placeholder="Enter your email" name="email" value="">
+        <br><br>
+
+        <p>Gender</p> <input type="text" name="gender" placeholder="Enter you Gender" class="box" id="gender" value="">
         <br><br>
 
         <button>VALIDATION</button>
@@ -82,7 +89,7 @@
         <button>EDIT</button>
         <button>DELETE</button>
 
-       <button onclick="validation()" >Submit</button>
+       <button onclick="execute()" >Submit</button>
     </form>
     </div>
     

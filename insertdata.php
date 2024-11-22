@@ -3,7 +3,7 @@
 $servername = "localhost"; 
 $username = "root";       
 $password = "";            
-$dbname = "DIPLALphp02";   
+$dbname = "NOV22";   
 
 // Create a connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -21,17 +21,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $id = $_POST['id'];
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $address = $_POST['add'];
+    $address = $_POST['address'];
+    $gender = $_POST['gender'];
 
     // Validate and sanitize data (optional but recommended)
     $name = htmlspecialchars(strip_tags($name));
     $email = htmlspecialchars(strip_tags($email));
     $address= (int)$address;
-    &id = (int)$id;
+    $id = (int)$id;
+    $gender = htmlspecialchars(strip_tags($gender));
 
     // Prepare SQL query using prepared statements
-    $stmt = $conn->prepare("INSERT INTO form2(id,name, email, address) VALUES (?, ?, ?)");
-    $stmt->bind_param("ssi",$id, $name, $email, $address); // "ssi" -> string, string, integer
+    $stmt = $conn->prepare("INSERT INTO form2( id,name, email, address, gender) VALUES (?, ?, ?)");
+    $stmt->bind_param("ssi",$id, $name, $email, $address ,$gender); // "ssi" -> string, string, integer
 
 
     // Execute the query
